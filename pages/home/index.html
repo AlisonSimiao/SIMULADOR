@@ -6,27 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS/global.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../../script/calc_juros_comp.js" defer></script>
     <title>Simulador JC</title>
 </head>
 
 <body>
     <main>
-        <section id="simu" class="border radius fundo-cont">
+        <article>
+            <h1>Calculadora de Juros Compostos</h1>
+            <p class="space_simple">
+                Os juros compostos crescem de forma exponencial, pois sua base de cálculo é sempre em cima do montante
+                anterior. Faça esse cálculo financeiro de forma simples utilizando nossa calculadora!
+            </p>
+        </article>
+        <section id="simu" class="border radius fundo-cont space_simple">
             <h1>Simulador de Juros Compostos</h1>
             <div class="conteiner">
                 <div class="conteiner_input">
                     <label for="">Valor inicial</label>
                     <div>
                         <span class="border radius_tl radius_bl pd">R$</span>
-                        <input class="border radius_br radius_tr pd" type="number" placeholder="00,00" aria-required="true"
-                            aria-invalid="true">
+                        <input id="text_vi" class="border radius_br radius_tr pd" type="number" placeholder="00,00"
+                            aria-required="true" aria-invalid="true">
                     </div>
                 </div>
                 <div class="conteiner_input">
                     <label for="">Valor mensal</label>
                     <div>
                         <span class="border radius_tl radius_bl pd">R$</span>
-                        <input type="number" class="border radius_br radius_tr pd" placeholder="00,00">
+                        <input type="number" id="text_vm" class="border radius_br radius_tr pd" placeholder="00,00">
                     </div>
                 </div>
             </div>
@@ -35,11 +44,11 @@
                     <label for="">Taxa de juros</label>
                     <div>
                         <span class="border radius_tl radius_bl pd">%</span>
-                        <input type="number" class="border radius_br radius_tr pd">
-                        <select name="periodo" id="op_periodo" class="border radius">
-                            <option value="d">dia(s)</option>
-                            <option value="m">mês(es)</option>
-                            <option value="a">ano(s)</option>
+                        <input type="number" id="text_taxa" class="border radius_br radius_tr pd">
+                        <select name="periodo" id="op_taxa" class="border radius">
+                            
+                            <option value="m">mensal</option>
+                            <option value="a">anual</option>
                         </select>
                     </div>
                 </div>
@@ -48,45 +57,71 @@
                     <div>
                         <input class="border radius pd" type="number" id="text_periodo">
                         <select name="periodo" id="op_periodo" class="border radius">
-                            <option value="d">dia(s)</option>
+                            
                             <option value="m">mês(es)</option>
                             <option value="a">ano(s)</option>
                         </select>
                     </div>
                 </div>
-                
+
             </div>
-            <button class="border animated">Calcular</button>
+            <button  id="btn" type="submit" class="border animated">Calcular</button>
         </section>
 
-        <section id="result" class="border radius fundo-cont"> 
+        <section id="result" class="border radius fundo-cont space_simple">
             <div class="t_result">
-                <h1>Resultado</h1> 
-                <section class="conteiner-social">
-                    <div class="social"></div>
-                    <div class="social"></div>
-                    <div class="social"></div>
-                    <div class="social"></div>
+                <h1>Resultado</h1>
+                <section class="conteiner-social" style="display: none;">
+                    <div class="social">
+                        <img src="../../assets/whats.png" alt="whats">
+                    </div>
+                    <div class="social">
+                        <img src="../../assets/fb.jpg" alt="fb">
+                    </div>
+                    <div class="social">
+                        <img src="../../assets/tt.jpg" alt="tt">
+                    </div>
+                    <div class="social">
+                        <img src="../../assets/email.jpg" alt="email">
+                    </div>
                 </section>
             </div>
 
             <section id="telas" class="space_simple">
                 <div class="tela border radius">
-                    <h2>Valor total final</h2>
+                    <h3>Valor total final</h3>
                     <span>R$ 00,00</span>
                 </div>
                 <div class="tela border radius ">
-                    <h2>Valor total investido</h2>
+                    <h3>Valor total investido</h3>
                     <span class="primary">R$ 00,00</span>
                 </div>
                 <div class="tela border radius">
-                    <h2>Total em juros</h2>
+                    <h3>Total em juros</h3>
                     <span class="green">R$ 00,00</span>
                 </div>
             </section>
-            <p class="space_simple">Os resultados dessa calculadora são simulações. Podendo assim, sofrer divergências causadas por mudanças nas regulamentações e taxas. Esta página tem caráter informativo, sem valor legal. Portanto, não dispensa a consulta de um profissional da área.</p>
+            <p class="space_simple">Os resultados dessa calculadora são simulações. Podendo assim, sofrer divergências
+                causadas por mudanças nas regulamentações e taxas. Esta página tem caráter informativo, sem valor legal.
+                Portanto, não dispensa a consulta de um profissional da área.</p>
         </section>
-        
+
+        <section class="space_simple">
+            <h1 class="space_simple">Como utilizar a calculadora de juros compostos</h1>
+            <ol class="paragrafo space_simple">
+                <li>Preencha o campo valor inicial;</li>
+                <li>Preencha o campo valor mensal (Será somado ao final de cada ciclo);</li>
+                <li>
+                    Preencha a taxa de juros anual ou mensal;
+                </li>
+                <li>Preencha o campo período por meses ou anos;</li>
+                <li>Clique em calcular e veja o resultado.</li>
+            </ol>
+
+            <p>Viu como é simples? Agora é só fazer suas simulações utilizando nossa calculadora de juros.</p> 
+        </section>
+        <a href="https://investidorsardinha.r7.com/calculadoras/calculadora-de-juros-compostos/" target="_blank" rel="noopener noreferrer">inspirated</a>
+
     </main>
 </body>
 
