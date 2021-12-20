@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS/global.css">
     <title>Simulador JC</title>
 </head>
+
 <body>
-    
+    <main>
+        <section id="simu" class="border radius fundo-cont">
+            <h1>Simulador de Juros Compostos</h1>
+            <div class="conteiner">
+                <div class="conteiner_input">
+                    <label for="">Valor inicial</label>
+                    <div>
+                        <span class="border radius_tl radius_bl pd">R$</span>
+                        <input class="border radius_br radius_tr pd" type="number" placeholder="00,00" aria-required="true"
+                            aria-invalid="true">
+                    </div>
+                </div>
+                <div class="conteiner_input">
+                    <label for="">Valor mensal</label>
+                    <div>
+                        <span class="border radius_tl radius_bl pd">R$</span>
+                        <input type="number" class="border radius_br radius_tr pd" placeholder="00,00">
+                    </div>
+                </div>
+            </div>
+            <div class="conteiner">
+                <div class="conteiner_input">
+                    <label for="">Taxa de juros</label>
+                    <div>
+                        <span class="border radius_tl radius_bl pd">%</span>
+                        <input type="number" class="border radius_br radius_tr pd">
+                        <select name="periodo" id="op_periodo" class="border radius">
+                            <option value="d">dia(s)</option>
+                            <option value="m">mês(es)</option>
+                            <option value="a">ano(s)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="conteiner_input">
+                    <label for="">Período</label>
+                    <div>
+                        <input class="border radius pd" type="number" id="text_periodo">
+                        <select name="periodo" id="op_periodo" class="border radius">
+                            <option value="d">dia(s)</option>
+                            <option value="m">mês(es)</option>
+                            <option value="a">ano(s)</option>
+                        </select>
+                    </div>
+                </div>
+                
+            </div>
+            <button class="border animated">Calcular</button>
+        </section>
+
+        <section id="result" class="border radius fundo-cont"> 
+            <div class="t_result">
+                <h1>Resultado</h1> 
+                <section class="conteiner-social">
+                    <div class="social"></div>
+                    <div class="social"></div>
+                    <div class="social"></div>
+                    <div class="social"></div>
+                </section>
+            </div>
+
+            <section id="telas" class="space_simple">
+                <div class="tela border radius">
+                    <h2>Valor total final</h2>
+                    <span>R$ 00,00</span>
+                </div>
+                <div class="tela border radius ">
+                    <h2>Valor total investido</h2>
+                    <span class="primary">R$ 00,00</span>
+                </div>
+                <div class="tela border radius">
+                    <h2>Total em juros</h2>
+                    <span class="green">R$ 00,00</span>
+                </div>
+            </section>
+            <p class="space_simple">Os resultados dessa calculadora são simulações. Podendo assim, sofrer divergências causadas por mudanças nas regulamentações e taxas. Esta página tem caráter informativo, sem valor legal. Portanto, não dispensa a consulta de um profissional da área.</p>
+        </section>
+        
+    </main>
 </body>
+
 </html>
